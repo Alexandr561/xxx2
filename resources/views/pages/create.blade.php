@@ -10,12 +10,21 @@
             <label for="title" >Title</label>
             <input value="{{ old('title') }}"
                 type="text" name="title" class="form-control" id="title" placeholder="Enter title" required>
+
+
+            @error('title')
+            <p class="text-danger">{{$message}}</p>
+         @enderror
         </div>
 
         {{--        content--}}
         <div class="form-group mb-3">
             <label for="content" >Content</label>
             <textarea name="content" id="content" class="form-control" placeholder="Enter content" required>{{ old('content') }}</textarea>
+
+            @error('content')
+            <p class="text-danger">{{$message}}</p>
+            @enderror
         </div>
 
         {{--        img--}}

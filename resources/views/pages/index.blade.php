@@ -18,5 +18,9 @@
         </a>
     </div>
 
+    <div class="mt-5">
+        {{$posts->links()}}
+    </div>
+
     {{--end section--}}
 @endsection

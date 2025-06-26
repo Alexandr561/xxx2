@@ -16,7 +16,7 @@ PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(5);
 //        $tag = Tag::find(3);
 //        dd($posts->tags);
         return view('pages.index', [
@@ -45,13 +45,13 @@ PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'image' => 'string',
+            'title' => 'string|required',
+            'content' => 'string|required',
+            'image' => 'string|required',
             'category_id' => 'required|exists:categories,id', // Проверка, что категория существует
             'tags' => ''
         ]);
-        $tags = $data['tags'];
+        $tags = $data['tags'] ??[];
         unset($data['tags']);
 
         $post = Post::create($data);
