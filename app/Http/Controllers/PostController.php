@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Filters\PostFilter;
+use App\Http\Requests\Post\FilterRequest;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostTag;
@@ -14,8 +16,13 @@ PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(FilterRequest $request)
     {
+        $data = $request->validated();
+        $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
+        $posts = Post::filter($filter);
+        dd($posts);
+
         $posts = Post::paginate(5);
 //        $tag = Tag::find(3);
 //        dd($posts->tags);
@@ -97,6 +104,7 @@ PostController extends Controller
             'category_id' => '',
             'tags' => ''
         ]);
+
 
         $tags = $data['tags'];
         unset($data['tags']);
