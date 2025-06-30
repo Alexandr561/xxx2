@@ -11,7 +11,7 @@
     <div class="mt-4">
         <a href="{{route('admin.edit', $post->id)}} " class="btn btn-secondary">EDITE</a>
     </div>
-
+ццццццццц
 
     <div class="mt-4">
         <a href="{{ route('admin.post') }}" class="btn btn-secondary">
