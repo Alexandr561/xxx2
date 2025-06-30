@@ -25,3 +25,7 @@ Route::get('/admin/{id}/edit', [\App\Http\Controllers\Admin\AdminEditController:
 //GET	/photos/{photo}/edit	edit	photos.edit
 //PUT/PATCH	/photos/{photo}	update	photos.update
 //DELETE	/photos/{photo}	destroy	photos.destroy
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
