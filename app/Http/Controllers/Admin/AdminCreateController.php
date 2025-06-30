@@ -17,11 +17,13 @@ AdminCreateController extends Controller
         $categories = Category::all();
         $posts = Post::all();
         $tags = Tag::all();
-        return view('pages.admin.create', [
+        $totalPosts = Post::count(); // Общее количество постов
+
+        return view('admin.adminCreate', [
             'posts' => $posts,
             'categories' => $categories,
             'tags' => $tags,
-            'postsCount' => Post::count() // Добавляем подсчет постов
+            'totalPosts' => $totalPosts // Передаем общее количество
         ]);
     }
 }

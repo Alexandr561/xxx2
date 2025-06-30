@@ -8,8 +8,7 @@ use App\Http\Requests\Post\FilterRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class
-AdminStoreController extends Controller
+class AdminStoreController extends Controller
 {
     public function store(Request $request)
     {
@@ -28,6 +27,6 @@ AdminStoreController extends Controller
 
 //        return redirect()->route('posts.index');
         return redirect()->route('admin.show', $post->id);
+//        return redirect()->route('admin.show', ['admin' => $post->id]);
     }
 }
-

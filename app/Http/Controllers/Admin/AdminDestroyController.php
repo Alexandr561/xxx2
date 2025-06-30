@@ -8,12 +8,11 @@ use App\Http\Requests\Post\FilterRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 
-class AdminShowController extends Controller
+class AdminDestroyController extends Controller
 {
-    public function show(Post $post)
+    public function destroy(Post $post)
     {
-        return view('admin.adminShow', [
-            'post' => $post
-        ]);
+        $post->delete();
+        return redirect()->route('admin.index');
     }
 }
