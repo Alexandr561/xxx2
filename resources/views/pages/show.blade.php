@@ -1,5 +1,5 @@
 @extends('main.main')
-@section('title', 'INDEX')
+@section('title', 'SHOW')
 
 {{--start section--}}
 @section('content')

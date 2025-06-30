@@ -16,20 +16,24 @@ PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(FilterRequest $request)
-    {
-        $data = $request->validated();
-        $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
-        $posts = Post::filter($filter);
-        dd($posts);
+    public function index( FilterRequest $request){
 
-        $posts = Post::paginate(5);
-//        $tag = Tag::find(3);
-//        dd($posts->tags);
+        $data = $request->validated();
+
+        $filter = app()->make(PostFilter::class, ['queryParams' => array_filter($data)]);
+        $posts = Post::filter($filter)->paginate(3);
+
+
         return view('pages.index', [
             'posts' => $posts,
         ]);
     }
+//    public function index()
+//    {
+//        return view('pages.index', [
+//            'posts' => Post::paginate(5)
+//        ]);
+//    }
 
     /**
      * Show the form for creating a new resource.

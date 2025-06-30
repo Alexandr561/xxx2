@@ -22,10 +22,10 @@ class FilterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'string|required',
-            'content' => 'string|required',
-            'image' => 'string|required',
-//            'category_id' => 'required|exists:categories,id', // Проверка, что категория существует
+            'title' => 'string',
+            'content' => 'string',
+//            'image' => 'string',
+            'category_id' => '', // Проверка, что категория существует
 //            'tags' => ''
         ];
     }

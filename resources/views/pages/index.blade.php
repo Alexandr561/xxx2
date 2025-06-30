@@ -19,7 +19,7 @@
     </div>
 
     <div class="mt-5">
-        {{$posts->links()}}
+        {{$posts->withQueryString()->links()}}
     </div>
 
     {{--end section--}}
