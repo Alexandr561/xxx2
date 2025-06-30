@@ -13,7 +13,7 @@
 
     <div class="mt-4">
         <a href="{{ route('admin.create') }}" class="btn btn-secondary">
-            CREATE POST
+            CREATE POSTtt
         </a>
     </div>
 
