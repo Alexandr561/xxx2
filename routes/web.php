@@ -4,7 +4,7 @@ use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 
-Auth::routes();
+//Auth::routes();
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index']) ->name('home.index');
 Route::resource('posts', PostController::class);
 
