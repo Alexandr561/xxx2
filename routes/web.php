@@ -2,7 +2,7 @@
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
-
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk88888
 //Route::resource('posts', PostController::class);
 
 Route::get('/first_or_create', [\App\Http\Controllers\PostController::class, 'first_or_create'])
